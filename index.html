@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/skeleton.css">
+<link rel="stylesheet" href="./css/custom.css">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+<title>Speech Demos</title>
+</head>
+<body>
+
+<div class="container">
+  <header role="banner">    
+  </header>
+  <main role="main">
+    <article itemscope itemtype="https://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">UnitNet: A Sequence-to-Sequence Acoustic Model for Concatenative Speech Synthesis</h1>
+            <img src="UnitNet_LOGO.svg" width="270"/>
+      
+      <section itemprop="entry-text">
+        <br>
+<p>Paper: <a href="#">under review</a></p>
+<p>Visualization: <a href="https://github.com/xiaozhah/Visualization-of-Unit-Vectors">Github</a></p>
+<h2 id="authors">Authors</h2>
+<ul>
+<li>Xiao Zhou <a href="mailto:xiaozh@mail.ustc.edu.cn">xiaozh@mail.ustc.edu.cn</a></li>
+<li>Zhen-Hua Ling <a href="mailto:zhling@ustc.edu.cn">zhling@ustc.edu.cn</a></li>
+<li>Li-Rong Dai <a href="mailto:lrdai@ustc.edu.cn">lrdai@ustc.edu.cn</a></li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<p>This paper presents UnitNet, a sequence-to-sequence (Seq2Seq) acoustic model for concatenative speech synthesis. Comparing with the Tacotron2 model for Seq2Seq speech synthesis, UnitNet utilizes the phone boundaries of training data and its decoder contains autoregressive structures at both phone and frame levels. This hierarchical architecture can not only extract embedding vectors for representing phone-sized units in the corpus but also measure the dependency among consecutive units, which makes the UnitNet model capable of guiding the selection of phone-sized units for concatenative speech synthesis. A byproduct of this model is that it can also be applied to statistical parametric speech synthesis (SPSS) and improve the robustness of Seq2Seq acoustic feature prediction since it adopts interpretable transition probability prediction rather than attention mechanism for frame-level alignment. Experimental results show that our UnitNet-based concatenative speech synthesis method not only outperforms the unit selection methods using hidden Markov models and Tacotron-based unit embeddings, but also achieves better naturalness and faster inference speed than the SPSS method using FastSpeech and Parallel WaveGAN. Besides, the UnitNet-based SPSS method makes fewer synthesis errors than Tacotron2 and FastSpeech without naturalness degradation.</p>
+<h2 id="audio-samples">Audio Samples</h2>
+<h3 id="audio-quality">Naturalness (in-domain)</h3>
+  <table>
+    <tr>
+      <th>Text</th>
+      <td>繁荣农村经济，增加农民收入的重要途径，是内陆省缩小与沿海地区的差距，实现奔小康</td>
+      <td>风波亭一场，岳飞由岳云张宪搀扶着，步履艰难，踉踉跄跄，唱腔用的是高拨子</td>
+      <td>招聘公务员，一定要在核定的编制内，按照规定的职数和职位要求，选择合格人员</td>
+      <td>松柏生于山林，其始也，困于蓬蒿，厄于牛羊，而其终也，贯四时，阅千古而不改</td>
+      <td>接着是欧盟撩开扩大的帷幕，请出塞浦路斯、捷、匈、波，外加爱沙尼亚和斯洛文尼亚</td>
+    </tr>
+    <tr>
+      <th>UnitNet_CSS</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_CSS/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_CSS/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_CSS/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_CSS/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_CSS/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>Tacotron2_CSS</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_CSS/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_CSS/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_CSS/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_CSS/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_CSS/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>HMM_CSS</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/HMM_CSS/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/HMM_CSS/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/HMM_CSS/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/HMM_CSS/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/HMM_CSS/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>UnitNet_SPSS<br>+WaveNet</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>Tacotron2_org<br>+WaveNet</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>Tacotron2_SMA<br>+WaveNet</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>FastSpeech<br>+WaveNet</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>FastSpeech<br>+Parallel WaveGAN</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Parallel WaveGAN/FastSpeech/00000009.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Parallel WaveGAN/FastSpeech/00000164.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Parallel WaveGAN/FastSpeech/00000201.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Parallel WaveGAN/FastSpeech/00000199.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Parallel WaveGAN/FastSpeech/00000047.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+  </table>
+
+<h3 id="robustness-test">Robustness (out-of-domain, Griffin-Lim)</h3>
+<h4><i>Number Strings</i></h4>
+  <table>
+    <tr>
+      <th>Text</th>
+      <td>你有电话来至13866519022；<br>你有电话来至65301811；</td>
+      <td>今天的股价是555.2222222。</td>
+      <td>啊啊啊啊，我怎么算错了呢？ 应该是22222.22222。</td>
+      <td>等于7812837912231231222</td>
+      <td>等于123743.2222</td>
+    </tr>
+    <tr>
+      <th>Tacotron2_org</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio_IFLYTEK/00004004.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a>Skipping</td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio_BC2019/19100682.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a>Skipping</td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio_BC2019/19100683.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a>Skipping</td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio_BC2019/19100692.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_org/GenAudio_BC2019/19100698.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a>Skipping</td>
+    </tr>
+    <tr>
+      <th>Tacotron2_SMA</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard_IFLYTEK/00004004.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard_BC2019/19100682.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard_BC2019/19100683.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a>Skipping & Repeating</td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard_BC2019/19100692.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a>Repeating</td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/Tacotron2_SMA/GenAudio_hard_BC2019/19100698.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>FastSpeech</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio_IFLYTEK/00004004.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio_BC2019/19100682.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio_BC2019/19100683.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a>Skipping</td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio_BC2019/19100692.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/FastSpeech/GenAudio_BC2019/19100698.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+    <tr>
+      <th>UnitNet_SPSS</th>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5_IFLYTEK/00004004.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5_BC2019/19100682.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5_BC2019/19100683.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5_BC2019/19100692.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+      <td><a onclick="this.firstChild.play()"><audio ><source src="./Audios/UnitNet_SPSS/GenAudio0.5_BC2019/19100698.wav"/></audio><img width="30" alt="" src="http://pngimg.com/uploads/ear/ear_PNG35710.png" height="30"/></a></td>
+    </tr>
+  </table>
+
+<h4><i>Novels</i></h4>
+  <table>
+    <tr>
+      <th>Text</th>
+      <td>所以越是黎维娟盛赞陈孝正的时候，<br>郑微就越感到极度反感，并嗤之以鼻。</th>
+      <td>今天是农历己亥年，二月初七</th>
+    </tr>
+    <tr>
+      <th>Tacotron2_org</th>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/Tacotron2_org/GenAudio_IFLYTEK/00008028.wav" type="audio/mpeg"></audio><br>Stop-token error</td>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/Tacotron2_org/GenAudio_BC2019/19100700.wav" type="audio/mpeg"></audio><br>Stop-token error</td>
+    </tr>
+    <tr>
+      <th>Tacotron2_SMA</th>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/Tacotron2_SMA/GenAudio_hard_IFLYTEK/00008028.wav" type="audio/mpeg"></audio></td>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/Tacotron2_SMA/GenAudio_hard_BC2019/19100700.wav" type="audio/mpeg"></audio></td>
+    </tr>
+    <tr>
+      <th>FastSpeech</th>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/FastSpeech/GenAudio_IFLYTEK/00008028.wav" type="audio/mpeg"></audio></td>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/FastSpeech/GenAudio_BC2019/19100700.wav" type="audio/mpeg"></audio></td>
+    </tr>
+    <tr>
+      <th>UnitNet_SPSS</th>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/UnitNet_SPSS/GenAudio0.5_IFLYTEK/00008028.wav" type="audio/mpeg"></audio></td>
+      <td style="text-align:center"><audio controls style="width: 250px;"><source src="./Audios/UnitNet_SPSS/GenAudio0.5_BC2019/19100700.wav" type="audio/mpeg"></audio></td>
+    </tr>
+  </table>
+
+<h4><i>Classical Chinese Poetries</i></h4>
+<table width="1020">
+    <tr>
+      <th>Text</th>
+      <td style="vertical-align:middle; text-align:center;">茅屋为秋风所破歌，杜甫<br>
+        八月秋高风怒号，卷我屋上三重茅，<br>
+        茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳，<br>
+        南村群童欺我老无力，忍能对面为盗贼，<br>
+        公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息，<br>
+        俄顷风定云墨色，秋天漠漠向昏黑，<br>
+        布衾多年冷似铁，娇儿恶卧踏里裂，<br>
+        床头屋漏无干处，雨脚如麻未断绝，<br>
+        自经丧乱少睡眠，长夜沾湿何由彻，<br>
+        安得广厦千万间，大庇天下寒士俱欢颜，风雨不动安如山，<br>
+        呜呼，何时眼前突兀见此屋，吾庐独破受冻死亦足。</td>
+      <td style="vertical-align:middle; text-align:center;">观刈麦，白居易<br>
+        田家少闲月，五月人倍忙，<br>
+        夜来南风起，小麦覆陇黄，<br>
+        妇姑荷箪食，童稚携壶浆，<br>
+        相随饷田去，丁壮在南冈，<br>
+        足蒸暑土气，背灼炎天光，<br>
+        力尽不知热，但惜夏日长，<br>
+        复有贫妇人，抱子在其旁，<br>
+        右手秉遗穗，左臂悬敝筐，<br>
+        听其相顾言，闻者为悲伤，<br>
+        家田输税尽，拾此充饥肠，<br>
+        今我何功德，曾不事农桑，<br>
+        吏禄三百石，岁晏有余粮，<br>
+        念此私自愧，尽日不能忘。</td>
+    </tr>
+    <tr>
+      <th>Tacotron2_org</th>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/Tacotron2_org/GenAudio_BC2019_long/191019610.wav" type="audio/mpeg"></audio><br>Stop-token error</td>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/Tacotron2_org/GenAudio_BC2019_long/191020560.wav" type="audio/mpeg"></audio><br>Attention collapse & Stop-token error</td>
+    </tr>
+    <tr>
+      <th>Tacotron2_SMA</th>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/Tacotron2_SMA/GenAudio_hard_BC2019_long/191019610.wav" type="audio/mpeg"></audio></td>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/Tacotron2_SMA/GenAudio_hard_BC2019_long/191020560.wav" type="audio/mpeg"></audio></td>
+    </tr>
+    <tr>
+      <th>FastSpeech</th>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/FastSpeech/GenAudio_BC2019_long/191019610.wav" type="audio/mpeg"></audio><br>More incorrect tones in the last half of the text</td>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/FastSpeech/GenAudio_BC2019_long/191020560.wav" type="audio/mpeg"></audio><br>More incorrect tones in the last half of the text</td>
+    </tr>
+    <tr>
+      <th>UnitNet_SPSS</th>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/UnitNet_SPSS/GenAudio0.5_BC2019_long/191019610.wav" type="audio/mpeg"></audio></td>
+      <td style="text-align:center"><audio controls style="width: 300px;"><source src="./Audios/UnitNet_SPSS/GenAudio0.5_BC2019_long/191020560.wav" type="audio/mpeg"></audio></td>
+    </tr>
+</table>
+
+  <!--
+  <h4><i>Very Long Examples</i></h4>
+  <h>Put three long texts together for speech synthesis at once. The hardware is on CPU at the synthesis stage, and the sentence cannot be long enough to fit the memory.</h>
+  <br>asa</br>
+  <h><strong>Text: </strong>
+     前一段时间我看到一篇文章，说上世纪60年代的“大逃港”时，香港人真是好，全民动员救助逃过去的吃不饱饭的大陆人，可见香港人的精神境界有多高。有一次，我问一位老香港人，说这事是真的吗？他犹豫了一下说：“真的，但是没有他们说的那么崇高。”怎么回事呢？你想，香港原来就是个小渔村嘛，上面的所有人都是陆陆续续移民过去的。60年代“大逃港”，救助他们的香港人，主体就是那些刚移民过去不久的大陆人啊。他们并不是用香港人的身份在救助大陆人，而是在用老乡的身份在救老乡。他说，就像你罗胖是安徽人，现在有北京户口，安徽老家遭了灾，你寄点钱回去，这当然很崇高，但是这不能解释成北京人救助安徽人。这只是中国人文化传统里的老乡帮老乡。所以，不能解释得那么崇高。
+     话说我们公司的卫生间里，挂着一块牌子，上面写着“今日已消毒”，然后下面是今天的日期，比如今天是2018年5月10日。很明显，这是为了管理清洁工人，让他每天都要尽责打扫。估计你在很多卫生间也看过类似的牌子。有一天，我就问我们行政的同事，为啥要挂它呢？每天清洁工人只需要擦掉日期的最后一个字，比如明天只需要把5月10号改成5月11号就行了啊，他照样可以偷懒不干活啊。同事说，这就是人性啊。他毕竟每天都得来改一个数字，没有这个小小的约束，他就真有可能偷懒了。而有了这个小约束呢，大概率上，我们就得相信，他会尽到自己的责任。就像你在一份保证书上签下了自己的名字，不仅是法律作用，其实这个签名本身就有约束力。约束一个人，其实往往只需要一个小小的挂钩，其他交给信任就好了。
+     前两天我们聊到讲段子的技巧，昨天我还真就看到一份写段子指南。里面分了很多种套路，但核心技巧就是一种：盯住一句正常的话，然后在里面找逻辑反转点。比如，把正常的词拆开。比如这句，“女朋友很重要吗”，把“重”和“要”分开，段子就出来了。“女朋友很重，要吗？不要。”加一个词也有类似效果。比如“男人就应该喜欢阳刚的东西，比如打篮球。”这句话加一个词，就成了段子。“男人就应该喜欢阳刚的东西，比如打篮球的男人。”当然，最常用的方法是，一句话本来有一个指向，你逆转那个指向，就是段子。比如，俄国人的那个段子：“伏特加酒分两种，一种是好的，另一种是更好的。”你可能会说，这不就是语言游戏嘛。确实，有哲学家说：整个人类文化，其实就是语言游戏的结果。</h>
+  <p>Tacotron_SMA</p><audio src="http://home.ustc.edu.cn/~xiaozh/ICASSP2020/audio/Prop_PS/00000025.wav" controls=""></audio></p>
+  <p>Tacotron_SMA</p><audio src="http://home.ustc.edu.cn/~xiaozh/ICASSP2020/audio/Prop_PS/00000025.wav" controls=""></audio></p>
+  -->
+
+<h2 id="inference-speedup">Visualization</h2>
+<p>t-SNE visualization of the phone-dependent distributions of the context unit vectors learnt by the UnitNet encoder (left), the acoustic unit vectors learnt by the UnitNet decoder (middle), and the unit vectors learnt by the Tacotron2 encoder (right).</p>
+<img src="./vis_unit_embeddings.jpg"/>
+<p>The phone boundaries aligned by HMM (Top), UnitNet_SPSS (Middle) and Tacotron2_SMA (Bottom) for a test sentence.<br>The text corresponding to the speech was "作品正是由半阙残碑". We can see that HMM and UnitNet models obtained similar phone boundaries, which were consistent with the actual pronunciations of phones in speech waveforms.</p>
+<img src="./force-alignment.png" width="50%"/>
+
+<h2 id="our-related-works">Our Related Works</h2>
+<p><a href="https://www.isca-speech.org/archive/Interspeech_2018/abstracts/1198.html">Learning and Modeling Unit Embeddings for Improving HMM-based Unit Selection Speech Synthesis</a><br>
+<a href="https://dl.acm.org/doi/10.1145/3372244">Learning and Modeling Unit Embeddings Using Deep Neural Networks for Unit-Selection-Based Mandarin Speech Synthesis</a><br>
+<a href="https://ieeexplore.ieee.org/document/9053812">Extracting Unit Embeddings Using Sequence-To-Sequence Acoustic Models for Unit Selection Speech Synthesis</a><br>
+<a href="http://www.festvox.org/blizzard/bc2018/USTC_BlizzardChallenge2018.pdf">The USTC System for Blizzard Challenge 2018</a><br>
+<a href="http://www.festvox.org/blizzard/bc2019/IIM_blizzardchallenge2019.pdf">The IIM System for Blizzard Challenge 2019</a><br>
+
+      </section>
+    </article>
+  </main>
+</div>
+</body>
+</html>
+
